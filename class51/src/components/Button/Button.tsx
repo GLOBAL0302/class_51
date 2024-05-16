@@ -6,13 +6,13 @@ type Props ={
 const Button: React.FC<Props> = ({numberFunc}) => {
 
   const randomNumber = ()=>{
-    let newAllNumbers:number[] = [];
+    const newAllNumbers:number[] = [];
     while (newAllNumbers.length < 5){
-      let newNum = Math.floor(Math.random() * (36 - 5) + 5)
-      if (!newAllNumbers.includes(newNum)) newAllNumbers.push(newNum)
+      const newNum = Math.floor(Math.random() * (36 - 5) + 5);
+      if (!newAllNumbers.includes(newNum)) newAllNumbers.push(newNum);
     }
     numberFunc(newAllNumbers.slice().sort((a, b)=> a - b));
-  }
+  };
 
   return (
     <div>
