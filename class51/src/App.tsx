@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <div className="d-flex flex-column align-items-center gap-5 border border-5 p-5 bg-secondary-subtle">
-        <Button numberFunc = {setNumbers}/>
+        <Button setNumbers = {setNumbers}/>
         <div className='d-flex gap-5'>
           {numbers.map((num, index) =>(
             <RandomNumber number={num} key={index}/>

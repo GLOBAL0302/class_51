@@ -1,9 +1,7 @@
 import React from "react";
+import {BtnFunc} from "../../types";
 
-type Props ={
-  numberFunc:Function
-}
-const Button: React.FC<Props> = ({numberFunc}) => {
+const Button:React.FC<BtnFunc> = ({setNumbers}) => {
 
   const randomNumber = ()=>{
     const newAllNumbers:number[] = [];
@@ -11,7 +9,8 @@ const Button: React.FC<Props> = ({numberFunc}) => {
       const newNum = Math.floor(Math.random() * (36 - 5) + 5);
       if (!newAllNumbers.includes(newNum)) newAllNumbers.push(newNum);
     }
-    numberFunc(newAllNumbers.slice().sort((a, b)=> a - b));
+
+    setNumbers(newAllNumbers.slice().sort((a, b) => a - b));
   };
 
   return (
